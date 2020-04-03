@@ -835,7 +835,7 @@ This is more an overview. There are some steps missing.
 - gem install travis
 - travis login
 - Copy json file into the 'volumed' directory so we can use it in the container
-- travis encrypt-file service-account.json -r agx540/complexK8
+- travis encrypt-file service-account.json -r agx540/complexK8_4 --com
 
 #### Create a image version based on git SHA
 
@@ -895,21 +895,63 @@ http://35.195.226.53/ is the ip to the default backend.
 
 Here you see google cloud load balancer.
 
-### -
+### A Workflow for Changing in Production
 
-### --
+![A Workflow for Changing in Production](img/2020-04-03-10-19-23.png)
 
-### ---
+1. Checkout a branch
 
-### ----
+> git checkout -b \<name of branch\>
 
-### -----
+example
+> git checkout -b development
 
-### ------
+2. Change code and save
 
-### -------
+3. See if git recognizes your changes
 
-### --------
+> git status
+
+4. Add changes to commit
+
+> git add .
+
+5. Commit changes
+
+> git commit -m "some commit message"
+
+6. Push commit to remote
+
+> git push -u origin development
+
+7. Travis builds development branch
+
+8. Goto Github and create a pull request
+
+9. Merge Pullrequest on Github to master
+
+10. Travis now deploys it to GKE
+
+### Setting up HTTPS
+
+![LetsEncrypt Workflow](img/2020-04-03-11-12-12.png)
+
+
+## -
+
+## --
+
+## ---
+
+## ----
+
+## -----
+
+## ------
+
+## -------
+
+## --------
 
 ### Certified Kubernetes Application Developer (CKAD)
 
