@@ -756,6 +756,12 @@ Gives more information about storage provisioner current configured in Kubernete
 Create a secret from command line
 > kubectl create secret generic \<secret name\> -from-literal \<key\>=\<value\>
 
+List certificates
+> kubectl get certificates
+
+Get more information of a certificate
+> kubectl describe certificates
+
 ### minikube
 
 Start minikube
@@ -936,6 +942,33 @@ example
 
 ![LetsEncrypt Workflow](img/2020-04-03-11-12-12.png)
 
+1. First you need an domain
+
+2. Configure DNS
+
+If you have domain you need to point it to your kubernetes ingress ip.\
+To do so:
+
+    2.1 Create a "A" record and point it to your ingress address
+
+![DNS A RECORD](img/2020-04-03-14-17-34.png)
+
+    2.2 Create a "CNAME" record and point it to your domain name
+![DNS CNAME RECORD](img/2020-04-03-14-18-48.png)
+
+3. Install Cert Manager
+
+<www.github.com/jetstack/cert-manager>
+
+see documentation how install cert-manager
+
+![cert manager](img/2020-04-03-15-23-20.png)
+
+- Cert Manager is a pod
+- Certificate is an object in kuberenetes
+- Issuer is an object in kuberenetes
+
+4. Issuer config file
 
 ## -
 
