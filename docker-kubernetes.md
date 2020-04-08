@@ -718,6 +718,9 @@ Remove a pod
 Remove a service
 > kubectl delete service \<service name\>
 
+Get pods from one namespace
+> kubectl get pods --namespace=demo
+
 Get status of pods
 > kubectl get pods
 
@@ -784,6 +787,21 @@ Change docker client to connect to docker in minikube
 
 Get minikube logs
 > minikube logs
+
+### AKS Azure Kubernetes Service
+
+#### Connect command line to use kubectl
+
+> az login
+> az account set --subscription "Microsoft Azure"
+> az aks get-credentials --resource-group compute --name synx-compute
+
+#### Connect to Kubernetes dashboard
+
+> az login
+> az account list
+> az account set --subscription "Microsoft Azure"
+> az aks browse --resource-group compute --name synx-compute
 
 ### How to connect to Docker in minikube
 
