@@ -1124,6 +1124,14 @@ Create a new file
 See current directory
 > pwd
 
+## Windows Tools
+
+List open ports on local machine
+> netstat -an -b
+
+Check Tcp port
+> test-netconnection \<ip\> -Port \<Port\>
+
 ## Node.js sample project
 
 Create a node.js web application. Run it in a container and
