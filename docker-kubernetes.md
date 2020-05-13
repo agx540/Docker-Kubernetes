@@ -498,9 +498,7 @@ AWS_SECRET_KEY
 
 and use values from AWS user above.
 
-
-
-## Kuberenetes
+## Kubernetes
 
 Kubernetes is a system to deploy containerized apps.
 
@@ -709,6 +707,11 @@ Change the configuration of your local cluster. You only can do updates to a pod
 or\
 > kubectl apply -f \<folder\>
 
+Set context namespace
+> kubectl config set-context --current --namespace=\<namespace name\>\
+Example:\
+> kubectl config set-context --current --namespace=test
+
 Remove an object
 > kubectl delete -f \<filename\>
 
@@ -734,8 +737,8 @@ Get detailed info about an object
 > kubectl describe \<objecttype\> \<objectname\>
 
 Imperative command to update image
-> kubectl set image \<object tye\> / \<object name\>  \<container name\> = \<new image to use\>
-Exapmple:
+> kubectl set image \<object tye\> / \<object name\>  \<container name\> = \<new image to use\>\
+Example:\
 >kubectl set image deployment/client-deployment client=alexsnyx/multi-client:v6
 
 List namespaces
