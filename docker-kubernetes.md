@@ -721,6 +721,11 @@ Remove a pod
 Remove a service
 > kubectl delete service \<service name\>
 
+Remove all pods in a namspace
+> kubectl -n \<namespace\> delete po --all\
+Example:\
+> kubectl -n test delete po --all\
+
 Get pods from one namespace
 > kubectl get pods --namespace=demo
 
