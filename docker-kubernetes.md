@@ -159,7 +159,7 @@ Change a running container and create a new image. -c applies a change to a runn
 Push image into repository
 > docker push \<image name\>
 
-### Create to kill containers
+### Create and kill containers
 
 Start image with default start command
 > docker run \<image name\>
@@ -207,6 +207,12 @@ List all container ever created
 
 Get logs from a container
 > docker logs \<container id\>
+
+Get metrics for a pod (cpu and memory)
+> kubectl top pod <podname>
+
+Get metris from all pods (cpu and memory)
+> kubectl top pods
 
 Execute a command in a running container. -it means connect to STDIN.
 > docker exec -it \<container id\> \<command\>
