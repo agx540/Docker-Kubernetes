@@ -779,6 +779,13 @@ List certificates
 Get more information of a certificate
 > kubectl describe certificates
 
+Get an overview of your namespace
+ while (1) {cls
+>>  kubectl get pods
+>>  kubectl top pod
+>>  kubectl top node
+>> sleep 5}
+
 ### minikube
 
 Start minikube
