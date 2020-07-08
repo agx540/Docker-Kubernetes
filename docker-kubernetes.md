@@ -786,6 +786,12 @@ Get an overview of your namespace
 >>  kubectl top node
 >> sleep 5}
 
+Mark node as unscheduable
+> kubectl cordon my-node
+
+Mark node a scheduable
+> kubectl uncordon my-node
+
 ### minikube
 
 Start minikube
