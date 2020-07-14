@@ -780,17 +780,22 @@ Get more information of a certificate
 > kubectl describe certificates
 
 Get an overview of your namespace
- while (1) {cls
->>  kubectl get pods
->>  kubectl top pod
->>  kubectl top node
->> sleep 5}
+
+> while (1){\
+>> cls\
+>> kubectl get pods\
+>> kubectl top pod\
+>> kubectl top node\
+>> sleep 5\
+> }
 
 Mark node as unscheduable
 > kubectl cordon my-node
 
 Mark node a scheduable
 > kubectl uncordon my-node
+example
+>kubectl uncordon aks-agentpool-17470135-0 aks-agentpool-17470135-1 aks-agentpool-17470135-3 aks-agentpool-17470135-4 aks-agentpool-17470135-5 aks-agentpool-17470135-6 aks-agentpool-17470135-7
 
 ### minikube
 
