@@ -738,6 +738,12 @@ Get pods from one namespace
 Get status of pods
 > kubectl get pods
 
+Get not running pods from all namespaces
+> kubectl get pods -A --field-selector status.phase!=Running
+
+Get failed pods from all namespaces
+> kubectl get pods -A --field-selector status.phase=Failed
+
 Get status of services
 > kubectl get services
 
