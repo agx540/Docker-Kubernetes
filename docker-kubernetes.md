@@ -732,11 +732,23 @@ Remove all pods in a namspace
 Example:\
 > kubectl -n test delete po --all\
 
+Remove failed (evicted) pods
+> kubectl delete pod --field-selector="status.phase==Failed"
+
+Remove failed (evicted) pods from all namespaces
+> kubectl delete pod --all-namespaces --field-selector="status.phase==Failed"
+
 Get pods from one namespace
 > kubectl get pods --namespace=demo
 
 Get status of pods
 > kubectl get pods
+
+Get failed (evicted) pods
+> kubectl get pod --field-selector="status.phase==Failed"
+
+Get failed (evicted) pods and order by creation time
+> kubectl.exe get pods -n=insights --field-selector status.phase=Failed --sort-by=.metadata.creationTimestamp
 
 Get status of services
 > kubectl get services
@@ -757,6 +769,9 @@ List namespaces
 
 Get logs from a pod
 > kubectl logs \<pod name\>
+
+Stream logs from a pod
+> kubectl logs -f \<pod name\>
 
 List actual used persistent volumes
 > kubectl get pv
@@ -781,16 +796,18 @@ Get more information of a certificate
 
 Get an overview of your namespace
 
-> while (1){\
->> cls\
->> kubectl get pods\
->> kubectl top pod\
->> kubectl top node\
->> sleep 5\
-> }
+>   while (1){\
+>>  cls\
+>>  kubectl get pods\
+>>  kubectl top pod\
+>>  kubectl top node\
+>>  sleep 5\
+>   }
 
 Mark node as unscheduable
 > kubectl cordon my-node
+example
+>kubectl cordon aks-agentpool-17470135-0 aks-agentpool-17470135-1 aks-agentpool-17470135-3 aks-agentpool-17470135-4 aks-agentpool-17470135-5 aks-agentpool-17470135-6 aks-agentpool-17470135-7
 
 Mark node a scheduable
 > kubectl uncordon my-node
