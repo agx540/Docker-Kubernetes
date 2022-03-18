@@ -713,6 +713,9 @@ Change the configuration of your local cluster. You only can do updates to a pod
 or\
 > kubectl apply -f \<folder\>
 
+Apply new deployment configuration
+> kubectl apply -f "C:\Users\Alexander\OneDrive - synx.com\Projects\CEL\Multi-Tenant\k8\deployment-identityservice2.yaml"
+
 Set context namespace
 > kubectl config set-context --current --namespace=\<namespace name\>\
 Example:\
@@ -736,7 +739,7 @@ Remove failed (evicted) pods
 > kubectl delete pod --field-selector="status.phase==Failed"
 
 Remove failed (evicted) pods from all namespaces
-> kubectl delete pod --all-namespaces --field-selector="status.phase==Failed"
+> kub
 
 Get pods from one namespace
 > kubectl get pods --namespace=demo
