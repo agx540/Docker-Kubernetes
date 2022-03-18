@@ -753,6 +753,12 @@ Get failed (evicted) pods
 Get failed (evicted) pods and order by creation time
 > kubectl.exe get pods -n=insights --field-selector status.phase=Failed --sort-by=.metadata.creationTimestamp
 
+Get not running pods from all namespaces
+> kubectl get pods -A --field-selector status.phase!=Running
+
+Get failed pods from all namespaces
+> kubectl get pods -A --field-selector status.phase=Failed
+
 Get status of services
 > kubectl get services
 
