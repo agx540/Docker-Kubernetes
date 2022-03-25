@@ -1198,3 +1198,29 @@ access it from browser in hosting environment.
 see .\4.Node.js_project folder for project source code
 
 ![steps to create sample project](img/2020-03-02-09-40-16.png)
+
+
+## Create memory snapshot from pod in K8 cluster
+
+how to create a memory dump <https://thinkrethink.net/2021/02/17/memory-dump-net-core-linux-container-aks/>
+
+see: <https://docs.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-gcdump>
+
+
+get linux version: cat /etc/os-release
+
+1. apt-get install wget
+2. wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+3. dpkg -i packages-microsoft-prod.deb
+4. rm packages-microsoft-prod.deb
+5. apt-get update
+6. apt-get install -y apt-transport-https
+7. apt-get update
+8. apt-get install -y dotnet-sdk-3.1
+9. dotnet tool install --global dotnet-gcdump
+10. cd /root/.dotnet
+11. cd tools
+12. top
+13. ./dotnet-gcdump collect -p 1
+14. exit
+15. kubectl exec -n cel identityservice-855f9b588-d6kmp  -- cat /root/.dotnet/tools/20220325_074817_1.gcdump > dumpresult1.gcdump
