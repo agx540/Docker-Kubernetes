@@ -739,7 +739,7 @@ Remove failed (evicted) pods
 > kubectl delete pod --field-selector="status.phase==Failed"
 
 Remove failed (evicted) pods from all namespaces
-> kub
+> kubectl delete pod --all-namespaces --field-selector="status.phase==Failed"
 
 Get pods from one namespace
 > kubectl get pods --namespace=demo
