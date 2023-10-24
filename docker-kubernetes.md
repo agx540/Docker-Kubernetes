@@ -781,6 +781,7 @@ Get logs from a pod
 
 Stream logs from a pod
 > kubectl logs -f \<pod name\>
+> kubectl logs -f iotdevicemanagementservice-57c5d49464-v979x > iotdevice.log
 
 List actual used persistent volumes
 > kubectl get pv
@@ -812,6 +813,15 @@ Get an overview of your namespace
 >>  kubectl top node\
 >>  sleep 5\
 >   }
+
+Version to copy and paste
+ while (1){
+ cls
+ kubectl get pods
+ kubectl top pod
+ kubectl top node
+ sleep 5
+ }
 
 Mark node as unscheduable
 > kubectl cordon my-node
